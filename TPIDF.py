@@ -12,3 +12,12 @@ word = vectorizer.get_feature_names_out()
 print("Vocabulary:",word)
 
 print("BOW=\n", X.toarray())
+
+transformer = TfidfTransformer()
+tfidf = transformer.fit_transform(X)
+
+print("TF-IDF=\n", np.around( tfidf.toarray(),4 ))
+
+from sklearn.metrics.pairwise import cosine_similarity
+
+print(cosine_similarity(tfidf[-1],tfidf[:-1],dense_output=False))
