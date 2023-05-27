@@ -6,7 +6,7 @@ maxlen = 1000
 
 word_freqs =collections.Counter()
 
-with open('c:/Users/user/Desktop/Testing.txt',"r+",encoding="UTF-8") as f:
+with open('./Testing.txt',"r+",encoding="UTF-8") as f:
     for line in f:
         words = line.lower().split(" ")
 
